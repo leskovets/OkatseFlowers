@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from .models import Reviews
 
-# Create your views here.
+
+def reviews(request):
+    review = Reviews.objects.all()
+    data = {
+        'title': 'Reviews',
+        'reviews': review
+    }
+    return render(request, 'reviews/reviews.html', data)

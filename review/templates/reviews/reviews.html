@@ -1,0 +1,16 @@
+{% extends 'main/layouthtml.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        {% for el in reviews %}
+            <div class="alert alert-warning">
+                <h3>{{ el.name }}</h3>
+                <p>{{ el.text }}</p>
+                {{ el.data }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
